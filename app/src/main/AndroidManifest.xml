@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ivandeveloper">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<!--    android:hardwareAccelerated="true"-->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/recipe_library_logo"
+        android:largeHeap="true"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/recipe_library_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:extractNativeLibs="false"
+        >
+        <activity android:name=".MealDescription" android:parentActivityName="com.ivandeveloper.Dashboard"></activity>
+        <activity android:name=".FilterCategory" android:parentActivityName="com.ivandeveloper.Dashboard"/>
+        <activity android:name=".Dashboard" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".Dashboard"
+    android:id="@+id/dashboard_root"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:elevation="10dp"
+        android:layout_alignParentTop="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchLinear"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            card_view:cardCornerRadius="10dp"
+            android:layout_margin="5dp"
+            android:elevation="30dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                app:layout_constraintStart_toEndOf="@+id/button"
+                android:background="@android:color/white"
+                android:iconifiedByDefault="false"
+                android:padding="3dp"
+                android:queryHint="Search dish"
+                android:textSize="28sp"
+                android:layout_margin="3dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dashboard_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/searchLinear" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dashboard_search_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/searchLinear" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/no_search_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="30dp"
+            app:cardBackgroundColor="#E6FFFFFF"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="3dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/dishText"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="No Search Result!"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:background="@color/purple">-->
+
+<!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:elevation="10dp">
+        <include layout="@layout/random_button"
+            android:layout_height="90dp"
+            android:layout_width="90dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".Dashboard">-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/searchLinear"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginVertical="3dp"-->
+<!--        android:background="@color/purple"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/search"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:background="@android:color/white"-->
+<!--            android:padding="20dp" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <ListView-->
+<!--        android:id="@+id/listViewHeroes"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/searchLinear" />-->
+
+
+    <!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/searchLinear">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linearListView"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="right"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:background="@drawable/linear_shape"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:elevation="10dp"-->
+<!--                app:cardCornerRadius="8dp">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/categoryImage"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@drawable/koala" />-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/categoryText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="left"-->
+<!--                android:text="Koala"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linearListView1"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="right"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:layout_marginRight="15dp"-->
+<!--            android:background="@drawable/linear_shape"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:elevation="10dp"-->
+
+<!--                app:cardCornerRadius="8dp">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/categoryImage1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@drawable/koala" />-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/categoryText1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity=""-->
+<!--                android:text="Koala"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+
+<!--    </LinearLayout>-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
